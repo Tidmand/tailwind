@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face{
+        font-family:'vitesse sans light';
+        font-style:normal;
+        font-weight:300;
+        src:local("vitesse sans light"),local("Vitesse Sans Light"),url(/fonts/VitesseSans-Light.woff) format("woff")
+    }
+    @font-face{
+        font-family:'vitesse sans book';
+        font-style:normal;
+        font-weight:300;
+        src:local("vitesse sans book"),local("Vitesse Sans Book"),url(/fonts/VitesseSans-Book.woff) format("woff")
+    }
+    @font-face{
+        font-family:'vitesse sans medium';
+        font-style:normal;
+        font-weight:300;
+        src:local("vitesse sans medium"),local("Vitesse Sans Medium"),url(/fonts/VitesseSans-Medium.woff) format("woff")
+    }
+}
+
+img {
+    height:auto;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+        <title>Document</title>
+        <link href="/css/tailwind.css" rel="stylesheet">
+    </head>
+    <body class="bg-white font-VitesseBook">
+        <!-- Header -->
+        <header>
+            <nav class="container flex justify-between items-center">
+                <div class="py-1"><img src="./images/umakers-logo.png" alt="Umakers" /></div>
+                <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 uppercase">
+                    <li>
+                        <a href="#">Hammer</a>
+                    </li>
+                    <li>
+                        <a href="#">Kontakt os</a>
+                    </li>                
+                </ul>
+            </nav>
+        </header>
+        <!-- Hero -->
+        <section class="relative bg-gray-100">
+            <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 py-12 lg:py-24">
+                <div class="flex flex-1 flex-col space-y-4">
+                    <p>UMAKERS er et lille udviklerhus, som hjælper store og små kunder med at optimere deres online profil. Det kan være en hjemmeside, en landingpage, en blog eller en webshop. Eller andre specifikke opgaver, hvor vores kompetencer kommer i spil.</p>
+                    <p>Vi leverer professionelle løsninger med konsultation, analyse, design og hosting- samt serviceaftaler.</p>
+                    <p>Værktøjskassen omfatter bl.a. vores egen website builder Hammer (bygget på Umbraco), database- og processystemet Ninox og en bred vifte af andre relevante systemer, som integreres i løsninger, der passer til Jeres behov og ønsker.</p>
+                    <div class="buttons">
+                      <a href="#" class="btn inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-white uppercase tracking-widest font-semibold text-sm">Kontakt os</a>
+                    </div>
+                </div>
+                <div class="flex flex-1">
+                    <img src="/images/logo-remix-1.webp" alt="Umakers" />
+                </div>
+            </div>
+        </section>
+        <!-- Carousel -->
+        <section class="bg-gray-300 h-auto pt-5 pb-10 px-8 flex flex-col justify-center items-center">
+            <div class="w-full max-w-7xl mx-auto relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
+              <!-- Slides -->
+              <template x-for="slide in slides" :key="slide">
+                <div x-show="activeSlide === slide" class="p-24 font-bold text-5xl h-64 flex justify-center items-center bg-gray-500 text-white rounded-lg">
+                  <span class="w-12 text-center" x-text="slide"></span>
+                  <span class="text-teal-300">/</span>
+                  <span class="w-12 text-center" x-text="slides.length"></span>
+                </div>
+              </template>
+              <!-- Prev/Next Arrows -->
+              <div class="absolute inset-0 flex">
+                <div class="flex items-center justify-start w-1/2">
+                  <button class="bg-gray-100 text-red-500 hover:text-green-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                    &#8592;
+                  </button>
+                </div>
+                <div class="flex items-center justify-end w-1/2">
+                  <button class="bg-gray-100 text-red-500 hover:text-green-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                    &#8594;
+                  </button>
+                </div>        
+              </div>
+              <!-- Buttons -->
+              <div class="absolute w-full flex items-center justify-center px-4">
+                <template x-for="slide in slides" :key="slide">
+                  <button class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg" :class="{ 'bg-red-600': activeSlide === slide, 'bg-gray-500': activeSlide !== slide }" x-on:click="activeSlide = slide"></button>
+                </template>
+              </div>
+            </div>
+        </section>
+        <script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
+    </body>
+</html>
