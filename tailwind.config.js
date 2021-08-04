@@ -2,7 +2,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: "#9522FF",
+      }
+    },
     fontFamily: {
       VitesseLight: ["Vitesse sans light, sans-serif"],
       VitesseBook: ["Vitesse sans book, sans-serif"],
@@ -14,7 +18,9 @@ module.exports = {
     }
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["active"],
+    },
   },
   plugins: [],
 }

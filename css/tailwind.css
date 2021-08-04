@@ -23,6 +23,18 @@
     }
 }
 
+@layer components {
+    .btn {
+        @apply inline-block px-5 py-2 rounded-lg uppercase tracking-widest text-sm sm:text-xs
+    }
+    .btn-primary {
+        @apply shadow-lg bg-brand hover:bg-gray-700 transform transition hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-gray-900 text-white
+    }
+    .btn-secondary {
+        @apply shadow-lg bg-purple-500 hover:bg-purple-400 transform transition hover:-translate-y-0.5 focus:ring-purple-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-purple-600 text-white
+    }
+}
+
 img {
     height:auto;
 }
