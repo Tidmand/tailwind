@@ -38,6 +38,60 @@
                 </div>
             </div>
         </section>
+        <!-- Themes -->
+        <section class="sm:m-6 space-y-6">
+          <div class="relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+            <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
+            <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
+            <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+              <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+                <span class="block">Focus on your content</span>
+                <span class="block">We handle the distribution</span>
+              </h2>
+              <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
+              <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                  <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
+                  <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="theme-1 relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+            <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
+            <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
+            <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+              <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+                <span class="block">Focus on your content</span>
+                <span class="block">We handle the distribution</span>
+              </h2>
+              <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
+              <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                  <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
+                  <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="theme-2 relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+            <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
+            <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
+            <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+              <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+                <span class="block">Focus on your content</span>
+                <span class="block">We handle the distribution</span>
+              </h2>
+              <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
+              <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                  <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
+                  <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- Carousel -->
         <section class="bg-gray-300 h-auto pt-5 pb-10 px-8 flex flex-col justify-center items-center">
             <div class="w-full max-w-7xl mx-auto relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
@@ -65,7 +119,7 @@
               <!-- Buttons -->
               <div class="absolute w-full flex items-center justify-center px-4">
                 <template x-for="slide in slides" :key="slide">
-                  <button class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg" :class="{ 'bg-red-600': activeSlide === slide, 'bg-gray-500': activeSlide !== slide }" x-on:click="activeSlide = slide"></button>
+                  <button class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg" :class="{ 'bg-red-600': activeSlide === slide, 'bg-gray-500': activeSlide !== slide }" @click="activeSlide = slide"></button>
                 </template>
               </div>
             </div>
