@@ -8,22 +8,26 @@
     </head>
     <body class="bg-white font-VitesseBook">
         <!-- Header -->
-        <header>
-            <nav class="container flex justify-between items-center">
-                <div class="py-1"><img src="./images/umakers-logo.png" alt="Umakers" /></div>
-                <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 uppercase">
-                    <li>
-                        <a href="#">Hammer</a>
-                    </li>
-                    <li>
-                        <a href="#">Kontakt os</a>
-                    </li>                
-                </ul>
-            </nav>
+        <header x-data="{ open: false }" class="max-w-6xl mx-auto flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-white py-4 px-4 relative">
+          <a href="#" class="block">
+            <img class="w-48" src="/images/umakers-logo.png" alt="UMAKERS" title="UMAKERS">
+          </a>
+          <button x-on:click="open = !open" class="inline-block md:hidden w-8 h-8 text-gray-600 p-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row items-end md:items-center md:space-x-6 font-semibold w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0" x-bind:class="{ 'flex' : open , 'hidden' : !open}">
+            <a href="#" class="block py-1 text-gray-500 hover:text-gray-800 active:text-brand">Hammer</a>
+            <a href="#" class="block py-1 text-gray-500 hover:text-gray-800 active:text-brand">Kontakt os</a>
+          </nav>
         </header>
         <!-- Hero -->
         <section class="relative bg-gray-100">
-            <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 py-12 lg:py-24">
+            <div class="container max-w-6xl flex flex-col-reverse lg:flex-row items-center px-6 py-12 lg:py-24">
                 <div class="flex flex-1 flex-col space-y-4">
                     <p>UMAKERS er et lille udviklerhus, som hjælper store og små kunder med at optimere deres online profil. Det kan være en hjemmeside, en landingpage, en blog eller en webshop. Eller andre specifikke opgaver, hvor vores kompetencer kommer i spil.</p>
                     <p>Vi leverer professionelle løsninger med konsultation, analyse, design og hosting- samt serviceaftaler.</p>
@@ -40,7 +44,7 @@
         </section>
         <!-- Themes -->
         <section class="sm:m-6 space-y-6">
-          <div class="relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+          <div class="relative bg-skin-fill max-w-6xl mx-auto overflow-hidden sm:rounded-2xl">
             <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
             <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
             <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -57,7 +61,7 @@
               </div>
             </div>
           </div>
-          <div class="theme-1 relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+          <div class="theme-1 relative bg-skin-fill max-w-6xl mx-auto overflow-hidden sm:rounded-2xl">
             <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
             <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
             <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -74,7 +78,7 @@
               </div>
             </div>
           </div>
-          <div class="theme-2 relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl">
+          <div class="theme-2 relative bg-skin-fill max-w-6xl mx-auto overflow-hidden sm:rounded-2xl">
             <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
             <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
             <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -94,7 +98,7 @@
         </section>
         <!-- Carousel -->
         <section class="bg-gray-300 h-auto pt-5 pb-10 px-8 flex flex-col justify-center items-center">
-            <div class="w-full max-w-7xl mx-auto relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
+            <div class="w-full max-w-6xl mx-auto relative" x-data="{ activeSlide: 1, slides: [1, 2, 3, 4, 5] }">
               <!-- Slides -->
               <template x-for="slide in slides" :key="slide">
                 <div x-show="activeSlide === slide" class="p-24 font-bold text-5xl h-64 flex justify-center items-center bg-gray-500 text-white rounded-lg">
