@@ -8,7 +8,10 @@ function withOpacity(variableName) {
 }
 
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: [
+    './**/*.html',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -43,14 +46,14 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '1rem',
+      padding: '1.5rem',
     },
   },
-  variants: {
+  /*variants: {
     extend: {
       backgroundColor: ["active"],
       textColor: ["active"],
     },
-  },
+  },*/
   plugins: [],
 }
