@@ -1,150 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, inital-scale=1.0" />
-        <title>Document</title>
-        <link href="/css/tailwind.css" rel="stylesheet">
-    </head>
-    <body class="bg-white font-VitesseBook">
-        <!-- Header -->
-        <header x-data="{ open: false }" class="max-w-6xl mx-auto flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-white py-4 px-6 relative">
-          <a href="#" class="block">
-            <img class="w-48" src="/images/umakers-logo.png" alt="UMAKERS" title="UMAKERS">
-          </a>
-          <button x-on:click="open = !open" class="inline-block md:hidden w-8 h-8 text-gray-600 p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor" x-show="!open">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor" x-show="open">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row items-end md:items-center md:gap-4 font-semibold w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0" x-bind:class="{ 'flex' : open , 'hidden' : !open}">
-            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-800 active:text-brand">Hammer</a>
-            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-800 active:text-brand">Kontakt os</a>
-          </nav>
-        </header>
-        <!-- Hero -->
-        <section class="relative bg-gray-100">
-            <div class="container max-w-6xl flex flex-col-reverse lg:flex-row items-center px-6 py-12 lg:py-24">
-                <div class="flex flex-1 flex-col space-y-4">
-                    <p>UMAKERS er et lille udviklerhus, som hjælper store og små kunder med at optimere deres online profil. Det kan være en hjemmeside, en landingpage, en blog eller en webshop. Eller andre specifikke opgaver, hvor vores kompetencer kommer i spil.</p>
-                    <p>Vi leverer professionelle løsninger med konsultation, analyse, design og hosting- samt serviceaftaler.</p>
-                    <p>Værktøjskassen omfatter bl.a. vores egen website builder Hammer (bygget på Umbraco), database- og processystemet Ninox og en bred vifte af andre relevante systemer, som integreres i løsninger, der passer til Jeres behov og ønsker.</p>
-                    <div class="buttons space-x-1">
-                      <a href="#" class="btn btn-primary">Kontakt os</a>
-                      <a href="#" class="btn btn-secondary">Læs mere</a>
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+      <title>Document</title>
+      <link href="/css/tailwind.css" rel="stylesheet">
+  </head>
+  <body class="bg-white font-VitesseBook">
+    <!-- Header -->
+    <header x-data="{ open: false }" class="max-w-6xl mx-auto flex flex-wrap flex-row justify-between items-center md:space-x-4 bg-white py-4 px-6 relative">
+      <a href="#" class="block">
+        <img class="h-8 sm:h-12 lg:h-16 transform" src="/images/umakers-logo.png" alt="UMAKERS" title="UMAKERS">
+      </a>
+      <button x-on:click="open = !open" class="inline-block md:hidden w-8 h-8 text-gray-600 p-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor" x-show="!open">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor" x-show="open">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row items-end md:items-center md:gap-4 font-semibold w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0" x-bind:class="{ 'flex' : open , 'hidden' : !open}">
+        <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-800 active:text-brand">Hammer</a>
+        <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-800 active:text-brand">Kontakt os</a>
+      </nav>
+    </header>
+    <!-- Hero -->
+    <section class="relative bg-gray-100">
+        <div class="container max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center px-6 py-12 lg:py-24">
+            <div class="flex flex-1 flex-col space-y-4">
+                <p>UMAKERS er et lille udviklerhus, som hjælper store og små kunder med at optimere deres online profil. Det kan være en hjemmeside, en landingpage, en blog eller en webshop. Eller andre specifikke opgaver, hvor vores kompetencer kommer i spil.</p>
+                <p>Vi leverer professionelle løsninger med konsultation, analyse, design og hosting- samt serviceaftaler.</p>
+                <p>Værktøjskassen omfatter bl.a. vores egen website builder Hammer (bygget på Umbraco), database- og processystemet Ninox og en bred vifte af andre relevante systemer, som integreres i løsninger, der passer til Jeres behov og ønsker.</p>
+                <div class="buttons space-x-1">
+                  <a href="#" class="btn btn-primary">Kontakt os</a>
+                  <a href="#" class="btn btn-secondary">Læs mere</a>
+                </div>
+            </div>
+            <div class="flex flex-1">
+                <img src="/images/logo-remix-1.webp" alt="Umakers" class="w-full md:w-3/4 mx-auto" />
+            </div>
+        </div>
+    </section>
+    <!-- Themes -->
+    <section class="container max-w-6xl mx-auto py-6 space-y-6">
+      <div class="relative bg-skin-fill max-w-6xl mx-auto overflow-hidden rounded-xl sm:rounded-2xl">
+        <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
+        <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
+        <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+            <span class="block">Focus on your content</span>
+            <span class="block">We handle the distribution</span>
+          </h2>
+          <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
+          <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+            <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+              <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
+              <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-1 relative bg-skin-fill max-w-6xl mx-auto overflow-hidden rounded-xl sm:rounded-2xl">
+        <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
+        <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
+        <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+            <span class="block">Focus on your content</span>
+            <span class="block">We handle the distribution</span>
+          </h2>
+          <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
+          <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+            <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+              <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
+              <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="theme-2 relative bg-skin-fill max-w-6xl mx-auto overflow-hidden rounded-xl sm:rounded-2xl">
+        <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
+        <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
+        <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
+            <span class="block">Focus on your content</span>
+            <span class="block">We handle the distribution</span>
+          </h2>
+          <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
+          <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+            <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+              <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
+              <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Carousel -->
+    <section class="bg-gray-300 h-auto py-6 flex flex-col justify-center items-center">
+        <div class="container max-w-6xl mx-auto relative" x-data="{ activeSlide: 1, slides: [ 
+          { id: 1, src: './images/annie-spratt-gq5PECP8pHE-unsplash.jpg' }, 
+          { id: 2, src: './images/emma-simpson-mNGaaLeWEp0-unsplash.jpg' },
+          { id: 3, src: './images/james-pond-26vBUtlufFo-unsplash.jpg' },
+          { id: 4, src: './images/liane-metzler-B32qg6Ua34Y-unsplash.jpg' },
+          { id: 5, src: './images/spring-i-solnedgang.jpg' }
+          ] }">
+          <!-- Slides -->
+          <div class="relative h-96 md:h-[30rem] lg:h-[36rem]">
+            <template x-for="slide in slides" :key="slide">
+              <div x-show="activeSlide === slide.id" class="absolute left-0 top-0 right-0 bottom-0 p-24 font-bold text-5xl h-full flex justify-center items-center bg-gray-500 text-white rounded-xl sm:rounded-2xl"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="scale-0 transform"
+              x-transition:enter-end="scale-100 transform"
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-start="scale-100 transform"
+              x-transition:leave-end="scale-0 transform">
+                <img class="w-full h-full object-cover absolute z-0 rounded-xl sm:rounded-2xl" :src="`${slide.src}`" />
+                <div class="z-10">
+                  <span class="w-12 text-center" x-text="slide.id"></span>
+                  <span class="text-teal-300">/</span>
+                  <span class="w-12 text-center" x-text="slides.length"></span>
+                </div>
+              </div>
+            </template>
+          </div>
+          <!-- Prev/Next Arrows -->
+          <div class="absolute inset-0 flex">
+            <div class="flex items-center justify-start w-1/2">
+              <button class="bg-gray-200 text-red-500 hover:text-green-500 font-bold hover:shadow-lg rounded-full pb-2 w-8 h-6 ml-2" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                &#8592;
+              </button>
+            </div>
+            <div class="flex items-center justify-end w-1/2">
+              <button class="bg-gray-200 text-red-500 hover:text-green-500 font-bold hover:shadow rounded-full pb-2 w-8 h-6 mr-2" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                &#8594;
+              </button>
+            </div>        
+          </div>
+          <!-- Buttons -->
+          <div class="relative w-full flex items-center justify-center gap-4">
+            <template x-for="slide in slides" :key="slide">
+              <button class="flex-1 w-4 h-2 mt-4 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg" :class="{ 'bg-red-600': activeSlide === slide.id, 'bg-gray-500': activeSlide !== slide.id }" x-on:click="activeSlide = slide.id"></button>
+            </template>
+          </div>
+        </div>
+    </section>
+    <!-- Accordion -->
+    <section class="bg-white h-auto py-12 flex flex-col justify-center items-center">
+      <div class="container max-w-6xl mx-auto bg-white h-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="" x-data="{
+              faqs: [
+                  {
+                      question: 'Why do I need Alpine JS?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                      isOpen: true,
+                  },
+                  {
+                      question: 'Why am I so awesome?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                      isOpen: false,
+                  },
+                  {
+                      question: 'Why learn on Scrimba?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur.',
+                      isOpen: false,
+                  },
+              ]
+          }">
+          <h2 class="font-medium mb-4">Accordion</h2>
+          <div class="bg-white border border-gray-200 rounded-xl sm:rounded-2xl">
+            <ul class="rounded-xl sm:rounded-2xl shadow-md overflow-hidden">
+              <template x-for="faq in faqs" :key="faq.question">
+                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'bg-gray-50' : ''">
+                  <button type="button" class="w-full p-6 text-left" @click="faqs = faqs.map(f => ({ ...f, isOpen: f.question !== faq.question ? false : !f.isOpen}))">
+                    <div class="flex items-center justify-between">
+                      <div x-text="faq.question"></div>
+                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                      </svg>
                     </div>
-                </div>
-                <div class="flex flex-1">
-                    <img src="/images/logo-remix-1.webp" alt="Umakers" />
-                </div>
-            </div>
-        </section>
-        <!-- Themes -->
-        <section class="container max-w-6xl py-6 space-y-6">
-          <div class="relative bg-skin-fill max-w-6xl mx-auto overflow-hidden sm:rounded-2xl">
-            <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
-            <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
-            <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-              <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
-                <span class="block">Focus on your content</span>
-                <span class="block">We handle the distribution</span>
-              </h2>
-              <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
-              <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                  <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
-                  <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
-                </div>
-              </div>
-            </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all duration-700 p-6 pt-0" x-html="faq.answer" x-show="faq.isOpen"></div>
+                </li>
+              </template>
+            </ul>
           </div>
-          <div class="theme-1 relative bg-skin-fill max-w-6xl mx-auto overflow-hidden sm:rounded-2xl">
-            <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
-            <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
-            <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-              <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
-                <span class="block">Focus on your content</span>
-                <span class="block">We handle the distribution</span>
-              </h2>
-              <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
-              <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                  <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
-                  <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="theme-2 relative bg-skin-fill max-w-6xl mx-auto overflow-hidden sm:rounded-2xl">
-            <img class="absolute inset-0 h-full w-full object-cover opacity-30" src="images/spring-i-solnedgang.jpg" alt="Solnedgang" />
-            <div class="absolute inset-0 bg-gradient-to-r from-skin-hue via-skin-hue to-transparent opacity-60"></div>
-            <div class="relative max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-              <h2 class="text-3xl font-extrabold text-skin-base sm:text-4xl">
-                <span class="block">Focus on your content</span>
-                <span class="block">We handle the distribution</span>
-              </h2>
-              <p class="mt-4 text-lg leading-6 text-skin-muted">In this video, you'll learn how to build designs that support multiple themes in Tailwind CSS, leveraging the power of CSS variables. We also look at a common "gotcha" you might run into when trying to use color opacity utilities alongside colors defined as variables.</p>
-              <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                  <a href="#" class="text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm sm:px-8">Get started</a>
-                  <a href="#" class="text-skin-base bg-skin-button-muted flex item-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-opacity-80 hover:bg-opacity-60 sm:px-8">Live demo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Carousel -->
-        <section class="bg-gray-300 h-auto pt-5 pb-10 flex flex-col justify-center items-center">
-            <div class="container max-w-6xl relative" x-data="{ activeSlide: 1, slides: [ 
-              { id: 1, src: './images/annie-spratt-gq5PECP8pHE-unsplash.jpg' }, 
-              { id: 2, src: './images/emma-simpson-mNGaaLeWEp0-unsplash.jpg' },
-              { id: 3, src: './images/james-pond-26vBUtlufFo-unsplash.jpg' },
-              { id: 4, src: './images/liane-metzler-B32qg6Ua34Y-unsplash.jpg' },
-              { id: 5, src: './images/spring-i-solnedgang.jpg' }
-              ] }">
-              <!-- Slides -->
-              <div class="relative h-96 md:h-[30rem] lg:h-[36rem]">
-                <template x-for="slide in slides" :key="slide">
-                  <div x-show="activeSlide === slide.id" class="absolute left-0 top-0 right-0 bottom-0 p-24 font-bold text-5xl h-full flex justify-center items-center bg-gray-500 text-white sm:rounded-2xl"
-                  x-transition:enter="transition ease-out duration-300"
-                  x-transition:enter-start="scale-0 transform"
-                  x-transition:enter-end="scale-100 transform"
-                  x-transition:leave="transition ease-in duration-300"
-                  x-transition:leave-start="scale-100 transform"
-                  x-transition:leave-end="scale-0 transform">
-                    <img class="w-full h-full object-cover absolute z-0 sm:rounded-2xl" :src="`${slide.src}`" />
-                    <div class="z-10">
-                      <span class="w-12 text-center" x-text="slide.id"></span>
-                      <span class="text-teal-300">/</span>
-                      <span class="w-12 text-center" x-text="slides.length"></span>
+        </div>
+        <div class="" x-data="{
+              faqs: [
+                  {
+                      question: 'Why do I need Alpine JS?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                      isOpen: true,
+                  },
+                  {
+                      question: 'Why am I so awesome?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                      isOpen: false,
+                  },
+                  {
+                      question: 'Why learn on Scrimba?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur.',
+                      isOpen: false,
+                  },
+              ]
+          }">
+          <h2 class="font-medium mb-4">Collapse</h2>
+          <div class="bg-white border border-gray-200 rounded-xl sm:rounded-2xl">
+            <ul class="rounded-xl sm:rounded-2xl shadow-md overflow-hidden">
+              <template x-for="faq in faqs" :key="faq.question">
+                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'bg-gray-50' : ''">
+                  <button type="button" class="w-full p-6 text-left" @click="!faq.isOpen ? faq.isOpen = true : faq.isOpen = false">
+                    <div class="flex items-center justify-between">
+                      <div x-text="faq.question"></div>
+                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                      </svg>
                     </div>
-                  </div>
-                </template>
-              </div>
-              <!-- Prev/Next Arrows -->
-              <div class="absolute inset-0 flex">
-                <div class="flex items-center justify-start w-1/2">
-                  <button class="bg-gray-200 text-red-500 hover:text-green-500 font-bold hover:shadow-lg rounded-full pb-2 w-8 h-6 ml-2" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
-                    &#8592;
                   </button>
-                </div>
-                <div class="flex items-center justify-end w-1/2">
-                  <button class="bg-gray-200 text-red-500 hover:text-green-500 font-bold hover:shadow rounded-full pb-2 w-8 h-6 mr-2" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
-                    &#8594;
-                  </button>
-                </div>        
-              </div>
-              <!-- Buttons -->
-              <div class="relative w-full flex items-center justify-center gap-4">
-                <template x-for="slide in slides" :key="slide">
-                  <button class="flex-1 w-4 h-2 mt-4 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-gray-600 hover:shadow-lg" :class="{ 'bg-red-600': activeSlide === slide.id, 'bg-gray-500': activeSlide !== slide.id }" x-on:click="activeSlide = slide.id"></button>
-                </template>
-              </div>
-            </div>
-        </section>
-        <script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
-    </body>
+                  <div class="relative overflow-hidden transition-all duration-700 p-6 pt-0" x-html="faq.answer" x-show="faq.isOpen"></div>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
+  </body>
 </html>
