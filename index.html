@@ -171,14 +171,14 @@
           <div class="bg-white border border-gray-200 rounded-xl sm:rounded-2xl">
             <ul class="rounded-xl sm:rounded-2xl shadow-md overflow-hidden">
               <template x-for="faq in faqs" :key="faq.question">
-                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'bg-gray-50' : ''">
+                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'text-skin-base bg-skin-button-muted' : ''">
                   <button type="button" class="w-full p-6 text-left" @click="faqs = faqs.map(f => ({ ...f, isOpen: f.question !== faq.question ? false : !f.isOpen}))">
                     <div class="flex items-center justify-between">
                       <div x-text="faq.question"></div>
-                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-skin-fill" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                       </svg>
-                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-skin-muted" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                       </svg>
                     </div>
@@ -189,7 +189,7 @@
             </ul>
           </div>
         </div>
-        <div class="" x-data="{
+        <div class="theme-2" x-data="{
               faqs: [
                   {
                       question: 'Why do I need Alpine JS?',
@@ -208,18 +208,18 @@
                   },
               ]
           }">
-          <h2 class="font-medium mb-4">Collapse</h2>
+          <h2 class="font-medium mb-4">Collapse (med theme-2)</h2>
           <div class="bg-white border border-gray-200 rounded-xl sm:rounded-2xl">
             <ul class="rounded-xl sm:rounded-2xl shadow-md overflow-hidden">
               <template x-for="faq in faqs" :key="faq.question">
-                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'bg-gray-50' : ''">
+                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'text-skin-base bg-skin-button-muted' : ''">
                   <button type="button" class="w-full p-6 text-left" @click="!faq.isOpen ? faq.isOpen = true : faq.isOpen = false">
                     <div class="flex items-center justify-between">
                       <div x-text="faq.question"></div>
-                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-skin-fill" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                       </svg>
-                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-skin-muted" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                       </svg>
                     </div>
