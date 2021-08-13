@@ -148,115 +148,85 @@
     <!-- Accordion -->
     <section class="bg-white h-auto py-12 flex flex-col justify-center items-center">
       <div class="container max-w-6xl mx-auto bg-white h-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div class="">
-          <h2 class="font-medium pb-4">Smooth Accordion</h2>
-          <div class="bg-white border border-gray-200" x-data="{selected:null}">
-            <ul class="shadow-box">
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full p-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>Should I use reCAPTCHA v2 or v3?</span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                  <div class="p-6 pt-0">
-                    <p>reCAPTCHA v2 is not going away! We will continue to fully support and improve security and usability for v2.</p>
-                    <p>reCAPTCHA v3 is intended for power users, site owners that want more data about their traffic, and for use cases in which it is not appropriate to show a challenge to the user.</p>
-                    <p>For example, a registration page might still use reCAPTCHA v2 for a higher-friction challenge, whereas more common actions like sign-in, searches, comments, or voting might use reCAPTCHA v3. To see more details, see the reCAPTCHA v3 developer guide.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full p-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>I'd like to run automated tests with reCAPTCHA. What should I do?</span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                  <div class="p-6 pt-0">
-                    <p>For reCAPTCHA v3, create a separate key for testing environments. Scores may not be accurate as reCAPTCHA v3 relies on seeing real traffic.</p>
-                    <p>For reCAPTCHA v2, use the following test keys. You will always get No CAPTCHA and all verification requests will pass.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full p-6 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>Can I run reCAPTCHA v2 and v3 on the same page?</span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                  <div class="p-6 pt-0">
-                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
-                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
-                    <p>Yes, please use "www.recaptcha.net" in your code in circumstances when "www.google.com" is not accessible.</p>
-                    <ul>
-                      <li>First, replace &lt;script src="https://www.google.com/recaptcha/api.js" async defer&gt;&lt;/script&gt; with &lt;script src="https://www.recaptcha.net/recaptcha/api.js" async defer&gt;&lt;/script&gt;</li>
-                      <li>After that, apply the same to everywhere else that uses "www.google.com/recaptcha/" on your site.</li>
-                    </ul>
-                    <p>After that, apply the same to everywhere else that uses "www.google.com/recaptcha/" on your site.</p>
-                  </div>
-                </div>
-              </li>
+        <div class="" x-data="{
+              faqs: [
+                  {
+                      question: 'Why do I need Alpine JS?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                      isOpen: true,
+                  },
+                  {
+                      question: 'Why am I so awesome?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                      isOpen: false,
+                  },
+                  {
+                      question: 'Why learn on Scrimba?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur.',
+                      isOpen: false,
+                  },
+              ]
+          }">
+          <h2 class="font-medium mb-4">Accordion</h2>
+          <div class="bg-white border border-gray-200 rounded-xl sm:rounded-2xl">
+            <ul class="rounded-xl sm:rounded-2xl shadow-md overflow-hidden">
+              <template x-for="faq in faqs" :key="faq.question">
+                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'bg-gray-50' : ''">
+                  <button type="button" class="w-full p-6 text-left" @click="faqs = faqs.map(f => ({ ...f, isOpen: f.question !== faq.question ? false : !f.isOpen}))">
+                    <div class="flex items-center justify-between">
+                      <div x-text="faq.question"></div>
+                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                      </svg>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all duration-700 p-6 pt-0" x-html="faq.answer" x-show="faq.isOpen"></div>
+                </li>
+              </template>
             </ul>
           </div>
         </div>
-        <div class="">
-          <h2 class="font-medium pb-4">Smooth Collapse</h2>
-          <div class="bg-white border border-gray-200">
-            <ul class="shadow-box">
-              <li class="relative border-b border-gray-200" x-data="{selected:null}">
-                <button type="button" class="w-full p-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>Should I use reCAPTCHA v2 or v3?</span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                  <div class="p-6 pt-0">
-                    <p>reCAPTCHA v2 is not going away! We will continue to fully support and improve security and usability for v2.</p>
-                    <p>reCAPTCHA v3 is intended for power users, site owners that want more data about their traffic, and for use cases in which it is not appropriate to show a challenge to the user.</p>
-                    <p>For example, a registration page might still use reCAPTCHA v2 for a higher-friction challenge, whereas more common actions like sign-in, searches, comments, or voting might use reCAPTCHA v3. To see more details, see the reCAPTCHA v3 developer guide.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-200" x-data="{selected:null}">
-                <button type="button" class="w-full p-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>I'd like to run automated tests with reCAPTCHA. What should I do?</span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                  <div class="p-6 pt-0">
-                    <p>For reCAPTCHA v3, create a separate key for testing environments. Scores may not be accurate as reCAPTCHA v3 relies on seeing real traffic.</p>
-                    <p>For reCAPTCHA v2, use the following test keys. You will always get No CAPTCHA and all verification requests will pass.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-200" x-data="{selected:null}">
-                <button type="button" class="w-full p-6 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>Can I run reCAPTCHA v2 and v3 on the same page?</span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                  <div class="p-6 pt-0">
-                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
-                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
-                    <p>Yes, please use "www.recaptcha.net" in your code in circumstances when "www.google.com" is not accessible.</p>
-                    <ul>
-                      <li>First, replace &lt;script src="https://www.google.com/recaptcha/api.js" async defer&gt;&lt;/script&gt; with &lt;script src="https://www.recaptcha.net/recaptcha/api.js" async defer&gt;&lt;/script&gt;</li>
-                      <li>After that, apply the same to everywhere else that uses "www.google.com/recaptcha/" on your site.</li>
-                    </ul>
-                    <p>After that, apply the same to everywhere else that uses "www.google.com/recaptcha/" on your site.</p>
-                  </div>
-                </div>
-              </li>
+        <div class="" x-data="{
+              faqs: [
+                  {
+                      question: 'Why do I need Alpine JS?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iure quas laudantium dicta impedit, est id delectus molestiae deleniti enim nobis rem et nihil.',
+                      isOpen: true,
+                  },
+                  {
+                      question: 'Why am I so awesome?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur veniam ullam provident neque temporibus autem itaque odit.',
+                      isOpen: false,
+                  },
+                  {
+                      question: 'Why learn on Scrimba?',
+                      answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cumque, nulla harum aspernatur.',
+                      isOpen: false,
+                  },
+              ]
+          }">
+          <h2 class="font-medium mb-4">Collapse</h2>
+          <div class="bg-white border border-gray-200 rounded-xl sm:rounded-2xl">
+            <ul class="rounded-xl sm:rounded-2xl shadow-md overflow-hidden">
+              <template x-for="faq in faqs" :key="faq.question">
+                <li class="relative border-b border-gray-200 last-of-type:rounded-b-xl sm:last-of-type:rounded-b-2xl" :class="faq.isOpen ? 'bg-gray-50' : ''">
+                  <button type="button" class="w-full p-6 text-left" @click="!faq.isOpen ? faq.isOpen = true : faq.isOpen = false">
+                    <div class="flex items-center justify-between">
+                      <div x-text="faq.question"></div>
+                      <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                      <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                      </svg>
+                    </div>
+                  </button>
+                  <div class="relative overflow-hidden transition-all duration-700 p-6 pt-0" x-html="faq.answer" x-show="faq.isOpen"></div>
+                </li>
+              </template>
             </ul>
           </div>
         </div>
